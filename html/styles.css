@@ -10,3 +10,8 @@
     background-color: rgb(160, 62, 62);
     filter: drop-shadow(0 5px 5px rgb(172, 172, 172));
 }
+
+img {
+    height: 32px;
+    width: 32px;
+}
