@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/address.css">
+    <title>adress</title>
+</head>
+<body>
+    <div>
+        <h1>Address</h1>
+    </div>
+    <input id="mapsearch" class="controls" type="text" placeholder=""> 
+    <div id="map-canvas"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvqyEC4TKKElR_nYdJr0pgiM616s-PSwc&libraries=places" type="text/javascript"></script>
+
+    <script>
+        var map = new google.maps.Map(document.getElementById('map-canvas'),{
+            center:{
+                lat: -6.2160092,
+                lng: 106.8417918
+            },
+            zoom:12
+        });
+
+        var map = new google.maps.Map(document.getElementById('map-canvas'),{
+            center:{
+                lat: -6.2160092,
+                lng: 106.8417918
+            },
+            zoom:12
+        })
+
+        var marker = new google.maps.Marker({
+            map:map,
+            position: map.getCenter()
+        })
+
+        var searchBox = new google.maps.places.SearchBox(document.getElementById('mapsearch'));
+
+        google.maps.event.addListener(map,'center_changed', function() {
+            marker.setPosition(map.getCenter());
+            document.getElementById('lat').value=map.getCenter().lat();
+            document.getElementById('lng').value=map.getCenter().lng();
+        })
+
+        google.maps.event.addListener(searchBox, 'places_changed', function(){
+
+            var places = searchBox.getPlaces();
+
+            var bounds = new google.maps.LatLngBounds();
+            var i, place;
+
+            for(i=0; place=places[i]; i++){
+
+                console.log(place.geometry.location);
+
+                bounds.extend(place.geometry.location);
+                marker.setPosition(place.geometry.location);
+            }
+
+            map.fitBounds(bounds);
+            map.setZoom(16);
+        })
+    </script>
+</body>
+</html>
