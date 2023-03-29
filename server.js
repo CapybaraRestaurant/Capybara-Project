@@ -15,8 +15,22 @@ var item = { name: "John Doe",
     time: new Date("2011-04-20T09:30:51.01").toLocaleTimeString(),
     price: '฿120'};
 var newListItems = [item];
-var tabTitle = 'Hi';
+var tabTitle = 'Queue';
 var proceedBtn = 'Send to Cooking';
+
+const queueTab = {
+    tabTitle: 'Queue',
+    proceedBtn: 'Send to Cooking',
+}
+const cookTab = {
+    tabTitle: 'Cooking',
+    proceedBtn: 'Send to Delivery',
+}
+const deliveryTab = {
+    tabTitle: 'Delivery',
+    proceedBtn: 'Complete Order',
+}
+var tabs = [queueTab, cookTab, deliveryTab];
 
 app.get('/', (req, res) => {
     res.redirect('/restaurant');
@@ -25,6 +39,18 @@ app.get('/', (req, res) => {
 app.get('/restaurant', (req, res) => {
     res.render('list', {newListItems, tabTitle, proceedBtn});
 })
+
+app.get('/queue', async (req, res) => {
+    res.render('list', { tabTitle: tabs[0].tabTitle, proceedBtn: tabs[0].proceedBtn, newListItems });
+});
+
+app.get('/cooking', async (req, res) => {
+    res.render('list', { tabTitle: tabs[1].tabTitle, proceedBtn: tabs[1].proceedBtn, newListItems });
+});
+
+app.get('/delivery', async (req, res) => {
+    res.render('list', { tabTitle: tabs[2].tabTitle, proceedBtn: tabs[2].proceedBtn, newListItems });
+});
 
 app.listen("3000", () => {
     console.log("Server is running on Port 3000.");
