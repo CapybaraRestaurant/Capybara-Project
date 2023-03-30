@@ -21,96 +21,25 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvqyEC4TKKElR_nYdJr0pgiM616s-PSwc&libraries=places" type="text/javascript"></script>
 
-    <script>
-        var map = new google.maps.Map(document.getElementById('map-canvas'),{
-            center:{
-                lat: -6.2160092,
-                lng: 106.8417918
-            },
-            zoom:12
-        });
-
-        var map = new google.maps.Map(document.getElementById('map-canvas'),{
-            center:{
-                lat: -6.2160092,
-                lng: 106.8417918
-            },
-            zoom:12
-        })
-
-        var marker = new google.maps.Marker({
-            map:map,
-            position: map.getCenter()
-        })
-
-        var searchBox = new google.maps.places.SearchBox(document.getElementById('mapsearch'));
-
-        google.maps.event.addListener(map,'center_changed', function() {
-            marker.setPosition(map.getCenter());
-            document.getElementById('lat').value=map.getCenter().lat();
-            document.getElementById('lng').value=map.getCenter().lng();
-        })
-
-        google.maps.event.addListener(searchBox, 'places_changed', function(){
-
-            var places = searchBox.getPlaces();
-
-            var bounds = new google.maps.LatLngBounds();
-            var i, place;
-
-            for(i=0; place=places[i]; i++){
-
-                console.log(place.geometry.location);
-
-                bounds.extend(place.geometry.location);
-                marker.setPosition(place.geometry.location);
-            }
-
-            map.fitBounds(bounds);
-            map.setZoom(16);
-        })
-    </script>
-    <div id="map"></div>
-
-     <script>
-       function initMap() {
- 
-         var brunchPos = {lat: 41.3882793, lng: 2.1615454};
-         var faboritPos = {lat: 41.3915233, lng: 2.1650537};
- 
-         var targetElem = document.getElementById('map');
-         var cameraPosition = { zoom: 13, center: faboritPos };
-         var map = new google.maps.Map(targetElem, cameraPosition);
- 
- 
-         var marker1 = new google.maps.Marker({ map: map, position: faboritPos });
-         var marker2 = new google.maps.Marker({ map: map, position: brunchPos });
- 
- 
-         var input = document.getElementById('searchTextField');
-         var autocomplete = new google.maps.places.Autocomplete(input);
-         autocomplete.bindTo('bounds', map);
- 
-         autocomplete.addListener('place_changed', function() {
- 
-           var place = autocomplete.getPlace();
-           if (!place.geometry) {
-             
-             window.alert("No details available for input: '" + place.name + "'. Select one of the results.");
-             return;
-           }
- 
-           var marker = new google.maps.Marker({ map: map, position: place.geometry.location });
-         });
- 
-       }
-     </script>
+    <div class="tm-container-inner-2 tm-map-section">
+        <div class="row">
+            <div class="col-12">
+                <div class="tm-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11196.961132529668!2d-43.38581128725845!3d-23.011063013218724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bdb695cd967b7%3A0x171cdd035a6a9d84!2sAv.%20L%C3%BAcio%20Costa%20-%20Barra%20da%20Tijuca%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%20Brazil!5e0!3m2!1sen!2sth!4v1568649412152!5m2!1sen!2sth" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
  
      <script async defer
      src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap&key=YOUR_API_KEY_HERE">
      </script>
+     
+<h4>Contact: 01234567</h4>
+
+<h5>Total Price:</h5>
+
 <a href="ontheway.html" class="btn-submit">Submit</a>
-<!-- <button type="button" class="button">Submit</button>       -->
 
 </div>
 </body>
