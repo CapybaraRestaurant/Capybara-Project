@@ -29,9 +29,9 @@ $('button[name="reload"]').click((e) => {
     location.reload();
 })
 
-setInterval( () => {
-    location.reload();
-}, 60000);
+// setInterval( () => {
+//     location.reload();
+// }, 60000);
 
 const statusList = {
     "Queue": 1,
