@@ -121,17 +121,7 @@
                     <h3 class="float-end"><strong>Total Price: </strong>฿<%= foundList[i].totalPrice %></h3>
                   </div>
                   <div class="col-6">
-                    <iframe
-                      class="responsive-iframe"
-                      style="border:0"
-                      loading="lazy"
-                      allowfullscreen
-                      referrerpolicy="no-referrer-when-downgrade"
-                      src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyBgXdIbQ1YelrPcjdCx-4FVcPQtLCGWGrQ
-                      &origin=Oslo+Norway
-                      &destination=Telemark+Norway
-                      &avoid=tolls|highways">
-                    </iframe>
+                    <div id="map"></div>
                   </div>
                 </div>
                 </div>
@@ -157,6 +147,9 @@
     integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
     crossorigin="anonymous"
   ></script>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
   <script src="index.js"></script>
 </body>
 </html>
