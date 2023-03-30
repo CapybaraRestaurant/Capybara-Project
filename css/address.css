@@ -32,6 +32,7 @@ h1{
     margin-right: auto;
     bottom: 30%;
     left: 40%;
+    display: inline-block;
   }
   
   .tm-map iframe {
@@ -109,3 +110,8 @@ h5{
     bottom: 400%;
 
 }
+
+.progress-bar {
+    width: 50%;
+    background-color: #7b0000; 
+    color: #fff; }
