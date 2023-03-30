@@ -60,3 +60,11 @@ td a {
 .cardElement {
     background-color: white;
 }
+
+strong {
+    color: #A75D5D;
+}
+
+strong,p,h3 {
+    font-family: 'Bahnschrift', sans-serif;
+}

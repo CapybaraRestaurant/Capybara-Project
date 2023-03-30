@@ -106,9 +106,19 @@
                 </div>
                 <div class="modal-body">
                   <div class="col-6">
-                    <h4 class="bahnschrift">Order items:</h4>
+                    <h4 class="hightlight bahnschrift"><strong>Order items:</strong></h4>
                     <hr>
-
+                    <% for (var j= 0; j< foundList[i].items.length; j++){ %>
+                      <p class=" bahnschrift"><%= foundList[i].items[j].name %> <span class="float-end">x<%= foundList[i].items[j].amount %></span></p>
+                    <% } %>
+                    <p class="hightlight bahnschrift"><strong>Total items:</strong> <%= foundList[i].totalItems %><span class="float-end hightlight"><strong>Price: </strong><%= foundList[i].totalPrice %></span></p>
+                    <p class="bahnschrift"><strong>Note: </strong> <%= foundList[i].note %></h5>
+                    <hr>
+                    <p><strong class="col-2">Address: </strong><%= foundList[i].address %></p>
+                    <p><strong class="col-2">Customer name: </strong><%= foundList[i].customer %></p>
+                    <p><strong class="col-2">Tel. No.: </strong><%= foundList[i].telNo %></p>
+                    <hr>
+                    <h3 class="float-end"><strong>Total Price: </strong>฿<%= foundList[i].totalPrice %></h3>
                   </div>
                 </div>
                 <div class="modal-footer">
