@@ -4,6 +4,15 @@ body{
     background-attachment: fixed;
     background-size: cover;
 }
+.white-box {
+    background-color: white;
+    color: black;
+    width: 40%;
+    height: 40rem;
+    border-radius: 5%;
+    position: fixed;
+}
+
 .img1{
     width: 20cm;
     height: 10cm;
@@ -13,42 +22,20 @@ body{
     line-height: 0;
 }
 .btn-primary{
-    line-height: 0;
+    position: relative;
+    left: 30px;
+    bottom:25%;
     background-color: white;
-    font-family: 'Dancing Script', cursive;
-    border: 50cm;
     color: black;
-    padding: 15px 32px;
+    width: 2%;
+    height: 5rem;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5%;
-    margin-top: auto;
-    float:left
-
+    font-size: 20px;
 }
 
-.img2{
-    width: 10cm;
-    height: 10cm;
+.capybarachef{
+    width: 50%;
+    height: 40%;
     display: inline-block;
-    margin-bottom: 160px;
-    line-height: 0;}
-
-.img3{
-    width: 10cm;
-    height: 10cm;
-    display: inline-block;
-    margin-bottom: 160px;
-    line-height: 0;}
     
-.img4{
-    width: 10cm;
-    height: 10cm;
-    display: inline-block;
-    margin-bottom: 160px;
-    margin-right: 160px;
-    line-height: 0;}
+}

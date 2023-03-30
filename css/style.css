@@ -2,6 +2,7 @@ body{
     background-color: #1d1d1d;
 }
 
+
 .fixed-action-btn{
     position: fixed;
     font-size: 100px;
@@ -40,3 +41,93 @@ body{
         color: white;
         font-family: 'Dancing Script', cursive;
     }
+
+    .parallax-window {
+        min-height: 460px;
+        background: transparent;
+        position: relative;
+      }
+      
+      .parallax-window-2 {
+        min-height: 220px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        background: transparent;
+        position: relative;
+      }
+      
+      .parallax-mirror {
+        z-index: 999 !important;
+      }
+
+      @media (max-width: 991px) {
+        .tm-nav-li {
+          padding-right: 15px;
+          padding-left: 15px;
+        }
+      }
+      
+      .tm-nav-link {
+        color: white;
+        text-decoration: none;
+        padding-bottom: 10px;
+      }
+      
+      .tm-nav-link.active,
+      .tm-nav-link:hover {
+        border-bottom: 1px solid white;
+      }
+      @media (min-width: 992px) {
+        .tm-gallery-page,
+        .tm-section {
+          max-width: 1120px;
+        }
+        
+        .tm-container-inner {
+          max-width: 1120px;
+        }
+        
+        .tm-container-inner-2 {
+          max-width: 900px;
+        }
+      }
+      
+      .tm-gallery-item {
+        max-width: 280px;
+      }
+      
+      .tm-gallery-img {
+        margin-bottom: 20px;
+      }
+      
+      .tm-gallery-title {
+        font-size: 1.3rem;
+        font-weight: 400;
+        color: white;
+        margin-bottom: 15px;
+      }
+      
+      .tm-gallery-description {
+        margin-bottom: 20px;
+      }
+      
+      .tm-gallery-price {
+        font-size: 1.25rem;
+        color: white;
+        margin-bottom: 60px;
+      }
+      
+      .tm-paging-links {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      
+.img-fluid {
+    width: 200px;
+    height: auto;
+    
+  }
+      
+     
