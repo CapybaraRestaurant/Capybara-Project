@@ -50,7 +50,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/restaurant', (req, res) => {
-    res.redirect('/queue');
+    res.render('login');
 })
 
 app.get('/queue', async (req, res) => {
