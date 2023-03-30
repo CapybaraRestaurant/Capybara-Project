@@ -24,11 +24,21 @@ h1{
     font-family: 'Dancing Script', cursive;
 }
 
-#map {
-    height: 300px;
+.tm-map {
+    max-width: 900px;
+    height: 350px;
     width: 50%;
-    
-   }
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 30%;
+    left: 40%;
+  }
+  
+  .tm-map iframe {
+    width: 100%;
+    height: 100%;
+  }
+
 
 .capybarachef{
     width: 50%;
@@ -59,7 +69,7 @@ h1{
     text-align: center;
     position: relative;
     border-radius: 12px;
-
+    bottom: 30%;
 }
 /* 
 .btn-submit:after {
@@ -81,3 +91,21 @@ h1{
     opacity: 1;
     transition: 0s
   } */
+
+  h2{
+    font-family: 'Dancing Script', cursive;
+}
+
+h3{
+    font-family: 'Dancing Script', cursive;
+}
+ 
+h4{
+    font-family: 'Dancing Script', cursive;
+    display: inline;}
+
+h5{
+    font-family: 'Dancing Script', cursive;
+    bottom: 400%;
+
+}

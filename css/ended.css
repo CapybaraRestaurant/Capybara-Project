@@ -1,0 +1,54 @@
+body{
+    background-image: url('/img/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.img1{
+    width: 20cm;
+    height: 10cm;
+    margin-bottom : 150px;
+    border-radius: 5%;
+    display: inline-block;
+    line-height: 0;
+}
+.btn-primary{
+    line-height: 0;
+    background-color: white;
+    font-family: 'Dancing Script', cursive;
+    border: 50cm;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5%;
+    margin-top: auto;
+    float:left
+
+}
+
+.img2{
+    width: 10cm;
+    height: 10cm;
+    display: inline-block;
+    margin-bottom: 160px;
+    line-height: 0;}
+
+.img3{
+    width: 10cm;
+    height: 10cm;
+    display: inline-block;
+    margin-bottom: 160px;
+    line-height: 0;}
+    
+.img4{
+    width: 10cm;
+    height: 10cm;
+    display: inline-block;
+    margin-bottom: 160px;
+    margin-right: 160px;
+    line-height: 0;}
