@@ -1,9 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const db = require("./config/db.js");
 const lodash = require('lodash');
-const path = require('path');
 
 const app = express();
+
+const listItem = require("./model/order.js");
+const Menu = listItem.Menu;
+const Order = listItem.Order;
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -51,6 +55,8 @@ app.get('/cooking', async (req, res) => {
 app.get('/delivery', async (req, res) => {
     res.render('list', { tabTitle: tabs[2].tabTitle, proceedBtn: tabs[2].proceedBtn, newListItems });
 });
+
+db.connect();
 
 app.listen("3000", () => {
     console.log("Server is running on Port 3000.");
