@@ -54,19 +54,29 @@ app.get('/restaurant', (req, res) => {
 })
 
 app.get('/queue', async (req, res) => {
-    const foundList = await Order.find({ status: 'Queue'});
+    const foundList = await Order.find({ status: '1'});
     res.render('list', { tabTitle: tabs[0].tabTitle, proceedBtn: tabs[0].proceedBtn, foundList});
 });
 
 app.get('/cooking', async (req, res) => {
-    const foundList = await Order.find({ status: 'Cooking'});
+    const foundList = await Order.find({ status: '2'});
     res.render('list', { tabTitle: tabs[1].tabTitle, proceedBtn: tabs[1].proceedBtn, foundList });
 });
 
 app.get('/delivery', async (req, res) => {
-    const foundList = await Order.find({ status: 'Delivery'});
+    const foundList = await Order.find({ status: '3'});
     res.render('list', { tabTitle: tabs[2].tabTitle, proceedBtn: tabs[2].proceedBtn, foundList });
 });
+
+app.post('/send', async (req, res) => {
+    var changeList = req.body.ids;
+    var newStatus = Number.parseInt(req.body.status)+1;
+    console.log(changeList);
+    for (let i = 0; i < changeList.length; i++) {
+        var foundList = await Order.updateOne({ id: changeList[i]}, { $set: { status: newStatus }});     
+    }
+    res.json(req.body);
+})
 
 db.connect();
 

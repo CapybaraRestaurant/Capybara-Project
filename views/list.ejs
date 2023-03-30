@@ -49,7 +49,6 @@
         </div>
       </div>
     </nav>
-    <form method="post">
 <div class="container">
     <!--top part-->
     <div class="row">
@@ -88,7 +87,7 @@
       </thead>
       <tbody>
         <% for (var i= 0; i< foundList.length; i++){ %>
-        <tr class="cardElement">
+        <tr class="cardElement" name="<%= foundList[i].id%>">
           <!--checkbox-->
           <th scope="row"><input type="checkbox" name="<%= foundList[i].id %>"></th>
           <td><%= foundList[i].id%></td>
@@ -133,7 +132,6 @@
       </tbody>
     </table>
   </div>
-</form>
   <script
     src="https://code.jquery.com/jquery-3.6.4.min.js"
     integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
