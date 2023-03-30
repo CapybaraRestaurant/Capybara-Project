@@ -92,7 +92,7 @@
           <th scope="row"><input type="checkbox" name="<%= foundList[i].id %>"></th>
           <td><%= foundList[i].id%></td>
           <td><%= foundList[i].time.toLocaleTimeString() %></td>
-          <td><%= new Date(Math.abs(foundList[i].time - Date.now())).getMinutes() + " minutes" %></td>
+          <td><%= Math.round((Math.abs(foundList[i].time - Date.now()))/60000) + " minutes" %></td>
           <td><%= foundList[i].customer %></td>
           <td><a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</a></td>
           <!-- Modal -->
