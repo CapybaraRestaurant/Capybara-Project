@@ -9,3 +9,9 @@ $('a.nav-link').click(function (e) {
     $(this).addClass('active');
     $(this).css('border-bottom', '3px solid white');
 });
+
+$('input[name="all"]').click(function(e) {
+    $( "input[type='checkbox']" ).prop({
+        checked: $(this).prop("checked")
+      });
+})
