@@ -8,7 +8,7 @@ body{
     background-color: white;
     color: black;
     width: 40%;
-    height: 60rem;
+    height: 40rem;
     border-radius: 5%;
     position: fixed;
 }
@@ -22,27 +22,20 @@ body{
     line-height: 0;
 }
 .btn-primary{
-    line-height: 0;
+    position: relative;
+    left: 30px;
+    bottom:25%;
     background-color: white;
-    font-family: 'Dancing Script', cursive;
-    border: 50cm;
     color: black;
-    padding: 15px 32px;
+    width: 2%;
+    height: 5rem;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5%;
-    margin-top: auto;
-    float:left;
-
+    font-size: 20px;
 }
 
 .capybarachef{
     width: 50%;
     height: 40%;
     display: inline-block;
-    left: auto;
+    
 }
