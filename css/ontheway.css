@@ -1,0 +1,32 @@
+body{
+    background-image:url(/img/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.white-box {
+    background-color: white;
+    color: black;
+    width: 40%;
+    height: 60rem;
+    border-radius: 5%;
+    position: fixed;
+}
+
+.img1{
+    width: 60%;
+    left: 200%;
+    display: block;
+    
+}
+
+.btn-primary{
+    left: 40px;
+    background-color: white;
+    color: black;
+    width: 2%;
+    height: 5rem;
+    text-align: center;
+    font-size: 20px;
+}
