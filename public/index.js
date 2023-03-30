@@ -11,7 +11,7 @@ $('a.nav-link').click(function (e) {
 });
 
 $('input[name="all"]').click(function(e) {
-    $( "input[type='checkbox']" ).prop({
+    $("input[type='checkbox']").prop({
         checked: $(this).prop("checked")
       });
 })
@@ -23,3 +23,26 @@ $('button[name="reload"]').click((e) => {
 setInterval( () => {
     location.reload();
 }, 60000);
+
+const statusList = {
+    "Queue": 1,
+    "Cooking": 2,
+    "Delivery": 3
+}
+
+$('#sendBtn').click(function (e) { 
+    var status = statusList[$('h1').text()];
+    var checkboxes = [];
+    $('input').each((index, element) => {
+        if (element.name != 'all')
+            checkboxes.push(element.name);
+    })
+    $.post("/send", {
+            ids: checkboxes,
+            status: status
+        },
+        function (data, textStatus, jqXHR) {
+            console.log(data);
+        }
+    );
+});
