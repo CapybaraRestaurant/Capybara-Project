@@ -1,3 +1,11 @@
+var map = L.map('map').setView([51.505, -0.09], 13);
+var marker;
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
 $('a.nav-link').each(function (index, element) {
     if ($('h1').text() == $(this).text()) {
         $(this).addClass('active');
@@ -36,11 +44,18 @@ $('a.detail').click(function (e) {
     $("input[type='checkbox']").prop('checked', false);
     let selector = 'input[name="'+$(this).attr('name')+'"]';
     $(selector).prop('checked', true);
+    let selector2 = 'p[name="'+$(this).attr('name')+'"]';
+    let location = $(selector2).text().replace('LatLng(','').replace(')','').split(', ');
+    console.log(location);
+    map.setView(location, 13);
+    marker = L.marker(location).addTo(map);
 });
 
 // uncheck order when close order detail
+// remove marker when close
 $('.btn-close').click(function (e) { 
     $("input[type='checkbox']").prop('checked', false);
+    marker.remove();
 });
 
 $('#sendBtn,[name="sendBtn"]').click(function (e) {
