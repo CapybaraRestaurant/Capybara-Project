@@ -115,3 +115,10 @@ h5{
     width: 50%;
     background-color: #7b0000; 
     color: #fff; }
+     
+p{
+    color: #7b0000;
+    font-family: 'Dancing Script', cursive;
+    left: 50%;
+    font-size: 50px;
+}
