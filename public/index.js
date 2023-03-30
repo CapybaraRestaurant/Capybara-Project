@@ -33,7 +33,7 @@ const statusList = {
 $('#sendBtn').click(function (e) { 
     var status = statusList[$('h1').text()];
     var checkboxes = [];
-    $('input').each((index, element) => {
+    $(':checked').each((index, element) => {
         if (element.name != 'all')
             checkboxes.push(element.name);
     })
@@ -42,7 +42,11 @@ $('#sendBtn').click(function (e) {
             status: status
         },
         function (data, textStatus, jqXHR) {
-            console.log(data);
+            checkboxes.forEach( (e) => {
+                var selector = 'tr[name="'+e+'"]';
+                $(selector).prop('hidden', true);
+                console.log('Order #'+e+ ' hidden');
+            })
         }
     );
 });
