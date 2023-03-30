@@ -19,7 +19,45 @@
     />
     <title>Login</title>
   </head>
-  <body>
+  <body class="bg-dark">
+    <br>
+    <form action="/login" method="post">
+      <div class="row">
+        <div class="col-1"></div>
+        <div id="title" class="col-4 bg-warning bg-gradient">
+          <h1 class="mt-4 ms-3">Login</h1>
+        </div>
+        <div></div>
+      </div>
+      <div class="row">
+        <div class="col-1"></div>
+        <div id="foot" class="col-4 bg-white">
+          <h4 class="mt-4 ms-3">Username:</h4>
+          <div class="input-group mb-3 ms-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Username"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+              required
+            />
+          </div>
+          <h4 class="ms-3">Password:</h4>
+          <div class="input-group mb-3 ms-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Password"
+              aria-label="Password"
+              aria-describedby="basic-addon1"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-warning ms-3 mb-5">Warning</button>
+        </div>
+      </div>
+    </form>
     <script
       src="https://code.jquery.com/jquery-3.6.4.min.js"
       integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
