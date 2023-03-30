@@ -19,3 +19,7 @@ $('input[name="all"]').click(function(e) {
 $('button[name="reload"]').click((e) => {
     location.reload();
 })
+
+setInterval( () => {
+    location.reload();
+}, 60000);
