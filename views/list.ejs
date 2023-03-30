@@ -95,6 +95,7 @@
           <td><%= new Date(Math.abs(foundList[i].time - Date.now())).getMinutes() + " minutes" %></td>
           <td><%= foundList[i].customer %></td>
           <td><a class="detail" name="<%= foundList[i].id%>" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</a></td>
+          <p name="<%= foundList[i].id%>" hidden><%= foundList[i].location %></p>
           <!-- Modal -->
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable modal-fullscreen">
