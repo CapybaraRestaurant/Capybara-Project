@@ -15,3 +15,7 @@ $('input[name="all"]').click(function(e) {
         checked: $(this).prop("checked")
       });
 })
+
+$('button[name="reload"]').click((e) => {
+    location.reload();
+})
