@@ -95,6 +95,7 @@
           <td><%= new Date(Math.abs(foundList[i].time - Date.now())).getMinutes() + " minutes" %></td>
           <td><%= foundList[i].customer %></td>
           <td><a class="detail" name="<%= foundList[i].id%>" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</a></td>
+          <p name="<%= foundList[i].id%>" hidden><%= foundList[i].location %></p>
           <!-- Modal -->
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable modal-fullscreen">
@@ -104,6 +105,7 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                  <div class="row">
                   <div class="col-6">
                     <h4 class="hightlight bahnschrift"><strong>Order items:</strong></h4>
                     <hr>
@@ -119,6 +121,10 @@
                     <hr>
                     <h3 class="float-end"><strong>Total Price: </strong>฿<%= foundList[i].totalPrice %></h3>
                   </div>
+                  <div class="col-6">
+                    <div id="map"></div>
+                  </div>
+                </div>
                 </div>
                 <div class="modal-footer">
                   <button name="sendBtn" type="button" id="sendBtn" data-bs-dismiss="modal" class="bahnschrift btn btn-primary mt-0"><%= proceedBtn %></button>
@@ -142,6 +148,9 @@
     integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
     crossorigin="anonymous"
   ></script>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
   <script src="index.js"></script>
 </body>
 </html>

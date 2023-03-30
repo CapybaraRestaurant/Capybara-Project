@@ -15,7 +15,8 @@ const orderSchema = new mongoose.Schema({
     note: String,
     totalPrice: Number,
     status: Number,
-    totalItems: Number
+    totalItems: Number,
+    location: String
 });
 
 exports.Menu = mongoose.model("menu", menuSchema);
