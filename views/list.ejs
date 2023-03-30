@@ -87,16 +87,47 @@
       </thead>
       <tbody>
         
-        <% for (var i= 0; i< newListItems.length; i++){ %>
+        <% for (var i= 0; i< foundList.length; i++){ %>
         <tr class="cardElement">
           <!--checkbox-->
           <th scope="row">[]</th>
-          <td><%= newListItems[i].number%></td>
-          <td><%= newListItems[i].time%></td>
-          <td>TimeElapsedPlaceholder</td>
-          <td><%= newListItems[i].name%></td>
-          <td><a href="">Details</a></td>
-          <td><%= newListItems[i].price%></td>
+          <td><%= foundList[i].id%></td>
+          <td><%= foundList[i].time.toLocaleTimeString() %></td>
+          <td><%= new Date(Math.abs(foundList[i].time - Date.now())).getMinutes() + " minutes" %></td>
+          <td><%= foundList[i].customer %></td>
+          <td><a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</a></td>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-fullscreen">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title bahnschrift" id="exampleModalLabel">Order #1</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="col-6">
+                    <h4 class="hightlight bahnschrift"><strong>Order items:</strong></h4>
+                    <hr>
+                    <% for (var j= 0; j< foundList[i].items.length; j++){ %>
+                      <p class=" bahnschrift"><%= foundList[i].items[j].name %> <span class="float-end">x<%= foundList[i].items[j].amount %></span></p>
+                    <% } %>
+                    <p class="hightlight bahnschrift"><strong>Total items:</strong> <%= foundList[i].totalItems %><span class="float-end hightlight"><strong>Price: </strong><%= foundList[i].totalPrice %></span></p>
+                    <p class="bahnschrift"><strong>Note: </strong> <%= foundList[i].note %></h5>
+                    <hr>
+                    <p><strong class="col-2">Address: </strong><%= foundList[i].address %></p>
+                    <p><strong class="col-2">Customer name: </strong><%= foundList[i].customer %></p>
+                    <p><strong class="col-2">Tel. No.: </strong><%= foundList[i].telNo %></p>
+                    <hr>
+                    <h3 class="float-end"><strong>Total Price: </strong>฿<%= foundList[i].totalPrice %></h3>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="sendBtn" class="bahnschrift btn btn-primary mt-0"><%= proceedBtn %></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <td><%= "฿" + foundList[i].totalPrice%></td>
         </tr>
         <% } %>
       </tbody>

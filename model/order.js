@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 
 const menuSchema = new mongoose.Schema({
     name: String,
-    price: Number
+    price: Number,
+    amount: Number
 })
 const orderSchema = new mongoose.Schema({
     id: Number,
@@ -11,8 +12,10 @@ const orderSchema = new mongoose.Schema({
     address: String,
     telNo: String,
     items: [ menuSchema ],
+    note: String,
     totalPrice: Number,
-    status: String
+    status: String,
+    totalItems: Number
 });
 
 exports.Menu = mongoose.model("menu", menuSchema);
