@@ -2,32 +2,23 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const db = require("./config/db.js");
 const lodash = require('lodash');
+const MongoStore = require('connect-mongo')
 
 const app = express();
 
+const session = require("express-session");
+const Authen = require("./control/authen.js");
+const user = require('./model/user.js');
+const User = user.User;
+
 const listItem = require("./model/order.js");
+const { log } = require("console");
 const Menu = listItem.Menu;
 const Order = listItem.Order;
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
-
-//Variable Placeholder
-var order1 = {
-    id: 1,
-    customer: "John Doe",
-    time: new Date("2011-04-20T09:30:51.01"),
-    address: "Robert Robertson, 1234 NW Bobcat Lane, St. Robert, MO 65584-5678",
-    telNo: '0832221155',
-    items: [ {
-        name: "Chicken curry",
-        price: 120
-    }],
-    totalPrice: 120,
-    status: 'Queue'
-};
-var orders = [order1];
 
 // Value for tabs
 const queueTab = {
@@ -44,14 +35,38 @@ const deliveryTab = {
 }
 var tabs = [queueTab, cookTab, deliveryTab];
 
+app.use(session({
+    secret: "jklfsodifjsktnwjasdp465dd", // Never ever share this secret in production, keep this in separate file on environmental variable
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: 3600000 }, //one hour
+    store: MongoStore.create({
+      mongoUrl: "mongodb://127.0.0.1:27017/todolistDB"}
+      )
+    }
+));
+
 //Order.insertMany(orders);
 app.get('/', (req, res) => {
     res.redirect('/restaurant');
 })
 
 app.get('/restaurant', (req, res) => {
-    res.render('login');
+    res.render('login', {credential: true});
 })
+
+app.post('/login', async (req, res) => {
+    const { username, password } = req.body;
+    const oldUser = await User.findOne({ username: username, password: password });
+    if (oldUser != null) {
+      req.session.userId = oldUser.id;
+      console.log(req.session);
+    } else {
+        res.render('login', { credential: false});
+        return;
+    }
+    res.redirect('/queue');
+  })
 
 app.get('/queue', async (req, res) => {
     const foundList = await Order.find({ status: '1'});
