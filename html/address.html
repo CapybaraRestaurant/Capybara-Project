@@ -14,9 +14,12 @@
     <div class="white-box">
         <a href="cooking.html" class="btn-primary">back</a>
         <p>your Order is ready!</p>
-        <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="address">Delevery</div>
-          </div>
+        <div class="progress-bar">
+            <div class="progress-step">Order Placed</div>
+            <div class="progress-step active">Preparing</div>
+            <div class="progress-step">Out for Delivery</div>
+            <div class="progress-step">Delivered</div>
+          </div>     
           <input type="text" name="myAddressBox" id="myAddressBox" placeholder="Enter your address">
           <input type="text" name="myStreetBox" id="myStreetBox" placeholder="Enter your street">
           <input type="text" name="myZIPCODEBox" id="myZIPCODEBox" placeholder="Enter your zup code">
@@ -42,7 +45,7 @@
 
 <h5>Total Price:</h5>
 
-<input type="submit" name="submitButton" value="Submit" disabled>
+<a href="ontheway.html" class="btn-submit">Submit</a>
 
 </div>
 </body>
