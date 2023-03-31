@@ -17,16 +17,10 @@
         <div class="progress">
             <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="address">Delevery</div>
           </div>
-        <h1>Address</h1>
-       
-    <input id="mapsearch" class="controls" type="text" placeholder=""> 
-    <div id="map-canvas"></div>
+          <input type="text" name="myAddressBox" id="myAddressBox" placeholder="Enter your address">
+          <input type="text" name="myStreetBox" id="myStreetBox" placeholder="Enter your street">
+          <input type="text" name="myZIPCODEBox" id="myZIPCODEBox" placeholder="Enter your zup code">
 
-    <h2>street</h2>
-    <input type="text" id="street" name="street"><br><br>
-
-    <h3>Zip code></h3>
-    <input type="text" id="Zipcode" name="Zipcode"><br><br>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvqyEC4TKKElR_nYdJr0pgiM616s-PSwc&libraries=places" type="text/javascript"></script>
 
@@ -48,7 +42,7 @@
 
 <h5>Total Price:</h5>
 
-<a href="ontheway.html" class="btn-submit">Submit</a>
+<input type="submit" name="submitButton" value="Submit" disabled>
 
 </div>
 </body>
