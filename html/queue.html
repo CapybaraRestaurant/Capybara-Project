@@ -11,17 +11,34 @@
     <img class="capybarachef" src="/img/capybarachef.png" alt="stylesheet" style="float:right">
 
     <div class="white-box">
-        <a href="index.html" class="btn-primary">back</a>
+        <!-- <a href="index.html" class="btn-primary">back</a> -->
         <p>your order is in queue!</p>
         <div class="progress">
             <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Queue</div>
             <h1>Order</h1>
-            <img src="/img/order.JPG" alt="stylesheet">
-            <h2>Total Price:</h2>
-            <h3>Note:</h3>
+            <meta charset="UTF-8">
+            <title>Total Price Example</title>
+            <script>
+              function calculateTotal() {
+                var quantity = document.getElementById("quantity").value;
+                var price = document.getElementById("price").value;
+                var total = quantity * price;
+                document.getElementById("total").innerHTML = "Total Price: " + total;
+              }
+            </script>
+          </head>
+          <body>
+            <h1>Total Price Example</h1>
+            <p>
+              Quantity: <input type="number" id="quantity" onchange="calculateTotal()">
+            </p>
+            <p>
+              Price: <input type="number" id="price" onchange="calculateTotal()">
+            </p>
+            <p id="total"></p>            <h3>Note:</h3>
             <h4>Contact:1234567</h4>
     </div>
-    <a href="cooking.html" class="btn-submit">Submit</a>
+    <!-- <a href="cooking.html" class="btn-submit">Submit</a> -->
 
 </body>
 </html>
