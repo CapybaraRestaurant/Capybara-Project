@@ -1,0 +1,139 @@
+body{
+    background-color: #1d1d1d;
+}
+
+
+.fixed-action-btn{
+    position: fixed;
+    font-size: 100px;
+    font-family: 'Dancing Script', cursive;
+    background-color: #7b0000;
+    border-radius: 50px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    width: 200px;
+    left: 80%;
+    bottom: 90%;
+    }
+    
+    img{
+        width: 100px;
+        height: 100px;
+    } 
+
+    #container3a {
+        width:151px;
+        height:498px;
+        background-color:#551001;
+        float:left; 
+        padding-left:34px;
+ }
+    .container3a1 {
+    width:121px;
+    height:24px;
+    padding-left:22px;
+    padding-top:7px;
+    }
+    h4{
+        color: white;
+        font-family: 'Dancing Script', cursive;
+    }
+
+    .parallax-window {
+        min-height: 460px;
+        background: transparent;
+        position: relative;
+      }
+      
+      .parallax-window-2 {
+        min-height: 220px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        background: transparent;
+        position: relative;
+      }
+      
+      .parallax-mirror {
+        z-index: 999 !important;
+      }
+
+      @media (max-width: 991px) {
+        .tm-nav-li {
+          padding-right: 15px;
+          padding-left: 15px;
+        }
+      }
+      
+      .tm-nav-link {
+        color: black;
+        text-decoration: none;
+        padding-bottom: 10px;
+      }
+      
+      .tm-nav-link.active,
+      .tm-nav-link:hover {
+        border-bottom: 1px solid white;
+      }
+      @media (min-width: 992px) {
+        .tm-gallery-page,
+        .tm-section {
+          max-width: 1120px;
+        }
+        
+        .tm-container-inner {
+          max-width: 1120px;
+        }
+        
+        .tm-container-inner-2 {
+          max-width: 900px;
+        }
+      }
+      
+      .tm-gallery-item {
+        max-width: 280px;
+      }
+      
+      .tm-gallery-img {
+        margin-bottom: 20px;
+      }
+      
+      .tm-gallery-title {
+        font-size: 1.3rem;
+        font-weight: 400;
+        color: white;
+        margin-bottom: 15px;
+      }
+      
+      .tm-gallery-description {
+        margin-bottom: 20px;
+      }
+      
+      .tm-gallery-price {
+        font-size: 1.25rem;
+        color: white;
+        margin-bottom: 60px;
+      }
+      
+      .tm-paging-links {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      
+.img-fluid {
+    width: 200px;
+    height: auto;
+    
+  }
+      
+  .white-box {
+    background-color: #1d1d1d;
+    width: 40%;
+    height: 60rem;
+    border-radius: 5%;
+    position: fixed;
+}

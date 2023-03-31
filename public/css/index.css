@@ -1,0 +1,97 @@
+.img-fluid {
+    width: 100%;
+}
+
+.cart {
+    position: fixed;
+    background-color:#7B0000 !important;
+    color: white !important;
+    font-family: 'Dancing Script', cursive;
+    width: 10rem; 
+}
+
+.cart img {
+    height: 32px;
+    width: 32px;
+}
+
+#categories {
+    background-color: #7B0000;
+}
+
+#footer {
+    background-color: #7B0000;
+}
+
+.contact {
+    color: white;
+    font-family: 'Bahnschrift', sans-serif;
+}
+
+.modal-body img {
+        border-radius: 1.5rem;
+}
+
+
+.modal-header {
+    border-bottom: #7B0000 !important;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+
+.modal-footer {
+    border-top: #7B0000 !important;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+#title {
+    font-family: 'Dancing Script', cursive;
+    color: white;
+    background-image: url('../img/slider.jpg');
+    background-size: cover;
+    margin-bottom: 0;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    color: white;
+}
+
+h4,.modal-title {
+    font-family: 'Dancing Script', cursive;
+}
+
+#list {
+    background-color: #1D1D1D;
+}
+
+.curry {
+    background-image: url('../img/masala.png');
+    outline: none;
+    font-family: 'Dancing Script', cursive;
+}
+
+.rice {
+    background-image: url('../img/rice.png');
+    outline: none;
+    font-family: 'Dancing Script', cursive;
+}
+
+.naan {
+    background-image: url('../img/naan.png');
+    outline: none;
+    font-family: 'Dancing Script', cursive;
+}
+
+.dessert {
+    background-image: url('../img/sweett.png');
+    outline: none;
+    font-family: 'Dancing Script', cursive;
+}
+
+.drinks {
+    background-image: url('../img/drinks.png');
+    outline: none;
+    font-family: 'Dancing Script', cursive;
+}

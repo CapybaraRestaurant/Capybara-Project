@@ -1,0 +1,19 @@
+#title {
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+h1,h4 {
+    font-family: 'Bahnschrift', sans-serif;
+}
+#foot {
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+
+.input-group {
+    width: 70%;
+}
+
+h2 {
+    font-family: 'Dancing Script', cursive;
+}
