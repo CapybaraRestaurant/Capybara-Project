@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Better Call Capybara</title>
+</head>
+<body>
+    <h1>Better Call Capybara!</h1>
+    <p>Your only destination for authentic Indian restaurant!</p>
+    <h2>Menu</h2>
+    <% for (var i= 0; i< menuItems.length; i++){ %>
+        <h3 class="<%= menuItems[i].id %>"><%= menuItems[i].name %></h3>
+        <div name="<%= menuItems[i].id %>">1</div>
+        <button class="plus" name="<%= menuItems[i].id %>">+</button><button class="minus" name="<%= menuItems[i].id %>">-</button>
+        <button type="button" name="<%= menuItems[i].id %>" class="cart">Add to Cart</button>
+    <% } %>
+    <h2>Cart</h2>
+    <p class="itemList"></p>
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+    <a href="/restaurant" type="submit">Click to go to restaurant side</a>
+    <script src="customer.js"></script>
+</body>
+</html>
+<!--I give up-->
