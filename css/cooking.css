@@ -35,3 +35,27 @@ p{
     left: 50%;
     font-size: 50px;
 }
+.btn-submit{
+    padding: 12px 28px;
+    font-size: 16px;
+    background-color: #7b0000;
+    color: white;
+    width: 250px;
+    float: left;
+    text-align: center;
+    position: relative;
+    border-radius: 12px;
+    bottom: 15%;
+}
+
+.capybarachef{
+    width: 50%;
+    height: 40%;
+    display: inline-block;
+    
+}
+h2{
+    bottom: 80%;
+    text-align: center;
+    position: relative;
+}
