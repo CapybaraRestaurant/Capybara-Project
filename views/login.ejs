@@ -20,6 +20,7 @@
     <title>Login</title>
   </head>
   <body class="bg-dark">
+    
     <br>
     <form action="/login" method="post">
       <div class="row">
@@ -40,21 +41,28 @@
               placeholder="Username"
               aria-label="Username"
               aria-describedby="basic-addon1"
+              name="username"
               required
             />
           </div>
           <h4 class="ms-3">Password:</h4>
           <div class="input-group mb-3 ms-3">
             <input
-              type="text"
+              type="password"
               class="form-control"
               placeholder="Password"
               aria-label="Password"
+              name="password"
               aria-describedby="basic-addon1"
               required
             />
           </div>
-          <button type="submit" class="btn btn-warning ms-3 mb-5">Warning</button>
+          <% if (!credential) {%>
+            <div class="alert alert-danger" role="alert">
+              Wrong credentials
+            </div>
+            <% } %>
+          <button type="submit" class="btn btn-warning ms-3 mb-5">Login</button>
         </div>
       </div>
     </form>
