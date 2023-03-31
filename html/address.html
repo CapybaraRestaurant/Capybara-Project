@@ -5,19 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/address.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <title>adress</title>
 </head>
 <body>
     <img class="capybarachef" src="/img/capybarachef.png" alt="stylesheet" style="float:right">
 
     <div class="white-box">
-        <a href="index.html" class="btn-primary">back</a>
-        <img class="img1" src="/img/address queue.JPG" alt="stylesheet"> 
-
+        <a href="cooking.html" class="btn-primary">back</a>
+        <p>your Order is ready!</p>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="address">Delevery</div>
+          </div>
         <h1>Address</h1>
        
     <input id="mapsearch" class="controls" type="text" placeholder=""> 
     <div id="map-canvas"></div>
+
+    <h2>street</h2>
+    <input type="text" id="street" name="street"><br><br>
+
+    <h3>Zip code></h3>
+    <input type="text" id="Zipcode" name="Zipcode"><br><br>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvqyEC4TKKElR_nYdJr0pgiM616s-PSwc&libraries=places" type="text/javascript"></script>
 
