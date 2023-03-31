@@ -48,7 +48,7 @@ app.use(session({
 
 //Order.insertMany(orders);
 app.get('/', (req, res) => {
-    res.redirect('/restaurant');
+    res.render('index');
 })
 
 app.get('/restaurant', (req, res) => {
