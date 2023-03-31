@@ -48,19 +48,32 @@ h1{
     
 }
 
-.btn-primary{
-    position: relative;
-    left: 30px;
-    bottom:25%;
-    background-color: white;
+.btn-primary {
+    background-color:white;
+    border: none;
     color: black;
-    width: 2%;
-    height: 5rem;
+    padding: 10px 20px;
     text-align: center;
-    font-size: 20px;
-}
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+input[type="submit"] {
+    background-color: #7b0000;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Dancing Script', cursive;
 
-.btn-submit{
+  }
+
+/* .btn-submit{
     padding: 12px 28px;
     font-size: 16px;
     background-color: #7b0000;
@@ -71,7 +84,7 @@ h1{
     position: relative;
     border-radius: 12px;
     bottom: 30%;
-}
+} */
 /* 
 .btn-submit:after {
     content: "";
@@ -93,17 +106,33 @@ h1{
     transition: 0s
   } */
 
-  h2{
-    font-family: 'Dancing Script', cursive;
-}
+  #myAddressBox {
+    width: 300px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 5px;
+    font-size: 16px;
+  }
+  
 
-h3{
-    font-family: 'Dancing Script', cursive;
-}
+  #myStreetBox {
+    width: 300px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 5px;
+    font-size: 16px;
+  }
  
-h4{
-    font-family: 'Dancing Script', cursive;
-    display: inline;}
+#myZIPCODEBox {
+    width: 300px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 5px;
+    font-size: 16px;
+  }
 
 h5{
     font-family: 'Dancing Script', cursive;
