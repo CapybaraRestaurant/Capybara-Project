@@ -14,11 +14,14 @@ const User = user.User;
 const listItem = require("./model/order.js");
 const { log } = require("console");
 const Menu = listItem.Menu;
+const MenuAmount = listItem.MenuAmount;
 const Order = listItem.Order;
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
+
+injectDummyDB()
 
 // Value for tabs
 const queueTab = {
@@ -46,14 +49,39 @@ app.use(session({
     }
 ));
 
-//Order.insertMany(orders);
-app.get('/', (req, res) => {
-    res.redirect('/restaurant');
+
+app.get('/', async (req, res) => {
+    const menuList = await Menu.find({});
+    const latestOrder = await Order.find({});
+    console.log(getNewId(latestOrder));
+    res.render('customer', { menuItems: menuList , order_id: getNewId(latestOrder)});
+})
+
+// find 
+function getNewId(latestOrder) {
+    var most = -1;
+    for (let index = 0; index < latestOrder.length; index++) {
+        const element = latestOrder[index];
+        if (element.id > most) {
+            most = element.id;
+        }
+    }
+    return most+1;
+}
+
+app.post('/logout',(req,res)=>{
+    req.session.destroy(function (err) {
+    res.redirect('/restaurant'); 
+    });
 })
 
 app.get('/restaurant', (req, res) => {
     res.render('login', {credential: true});
 })
+
+// app.get('/address', (req, res) => {
+//     res.render('address');
+// })
 
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
@@ -66,6 +94,10 @@ app.post('/login', async (req, res) => {
         return;
     }
     res.redirect('/queue');
+});
+
+  app.get('/neworder', (req, res) => {
+    res.redirect('/address');
   })
 
 app.get('/queue', Authen.authentication, async (req, res) => {
@@ -98,3 +130,59 @@ db.connect();
 app.listen("3000", () => {
     console.log("Server is running on Port 3000.");
 });
+
+function injectDummyDB(){
+    User.insertMany([{
+        "username": "admin",
+        "password": "1234"
+      }]);
+    Order.insertMany([{
+        "id": 1,
+        "customer": "John Doe",
+        "time": Date.now(),
+        "address": "Robert Robertson, 1234 NW Bobcat Lane, St. Robert, MO 65584-5678",
+        "telNo": "0832221155",
+        "items": [
+          {
+            "name": "Chicken curry",
+            "price": 60,
+            "amount": "1"
+          },
+          {
+            "name": "Naan",
+            "price": "60",
+            "amount": "1"
+          }
+        ],
+        "totalPrice": "120",
+        "status": 2,
+        "__v": 0,
+        "totalItems": "2",
+        "note": "Make chicken curry less spicy",
+        "location": "LatLng(18.78828218510149, 98.9929770532485)"
+      },{
+        "id": 2,
+        "customer": "Jane Doe",
+        "time": Date.now(),
+        "address": "Robert Robertson, 1234 NW Bobcat Lane, St. Robert, MO 65584-5678",
+        "telNo": "0832221155",
+        "items": [
+          {
+            "name": "Chicken curry",
+            "price": 60,
+            "amount": "1"
+          },
+          {
+            "name": "Naan",
+            "price": "60",
+            "amount": "1"
+          }
+        ],
+        "totalPrice": "120",
+        "status": 1,
+        "__v": 0,
+        "totalItems": "2",
+        "note": "Make chicken curry less spicy",
+        "location": "LatLng(18.78828218510149, 98.9929770532485)"
+      }]);
+}
