@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const db = require("./config/db.js");
 const lodash = require('lodash');
-const MongoStore = require('connect-mongo')
+const MongoStore = require('connect-mongo');
 
 const app = express();
 
@@ -12,7 +12,7 @@ const user = require('./model/user.js');
 const User = user.User;
 
 const listItem = require("./model/order.js");
-const { log } = require("console");
+const { log, error } = require("console");
 const Menu = listItem.Menu;
 const MenuAmount = listItem.MenuAmount;
 const Order = listItem.Order;
@@ -21,7 +21,79 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
-injectDummyDB()
+const port = 8080;
+
+
+Order.updateMany({ id: { $gt: 0 }}, { $set: { status: 1 }})
+.then( () => {
+  console.log('reset order status success');
+}).catch( (error) => {
+  console.log(error);
+})
+
+function injectDummyDB(){
+  User.insertMany([{
+      username: "admin",
+      password: "1234"
+    }]).then(function(){
+      console.log("Data inserted")  // Success
+  }).catch(function(error){
+      console.log(error)      // Failure
+  });
+  Order.insertMany([{
+      id: 1,
+      customer: "John Doe",
+      time: Date.now(),
+      address: "Robert Robertson, 1234 NW Bobcat Lane, St. Robert, MO 65584-5678",
+      telNo: "0832221155",
+      items: [
+        {
+          name: "Chicken curry",
+          price: 60,
+          amount: "1"
+        },
+        {
+          name: "Naan",
+          price: "60",
+          amount: "1"
+        }
+      ],
+      totalPrice: "120",
+      status: 2,
+      totalItems: "2",
+      note: "Make chicken curry less spicy",
+      location: "LatLng(18.78828218510149, 98.9929770532485)"
+    },{
+      id: 2,
+      customer: "Jane Doe",
+      time: Date.now(),
+      address: "Robert Robertson, 1234 NW Bobcat Lane, St. Robert, MO 65584-5678",
+      telNo: "0832221155",
+      items: [
+        {
+          name: "Chicken curry",
+          price: 60,
+          amount: "1"
+        },
+        {
+          name: "Naan",
+          price: "60",
+          amount: "1"
+        }
+      ],
+      totalPrice: "120",
+      status: 1,
+      totalItems: "2",
+      note: "Make chicken curry less spicy",
+      location: "LatLng(18.78828218510149, 98.9929770532485)"
+    }]).then(function(){
+      console.log("Data inserted")  // Success
+  }).catch(function(error){
+      console.log(error)      // Failure
+  });
+}
+
+//injectDummyDB();
 
 // Value for tabs
 const queueTab = {
@@ -44,7 +116,7 @@ app.use(session({
     saveUninitialized: true,
     cookie: { maxAge: 3600000 }, //one hour
     store: MongoStore.create({
-      mongoUrl: "mongodb://127.0.0.1:27017/todolistDB"}
+      mongoUrl: "mongodb://127.0.0.1:27017/capybaraDB"}
       )
     }
 ));
@@ -127,62 +199,6 @@ app.post('/send', Authen.authentication, async (req, res) => {
 
 db.connect();
 
-app.listen("3000", () => {
-    console.log("Server is running on Port 3000.");
+app.listen(port , () => {
+    console.log("Server is running on Port "+port);
 });
-
-function injectDummyDB(){
-    User.insertMany([{
-        "username": "admin",
-        "password": "1234"
-      }]);
-    Order.insertMany([{
-        "id": 1,
-        "customer": "John Doe",
-        "time": Date.now(),
-        "address": "Robert Robertson, 1234 NW Bobcat Lane, St. Robert, MO 65584-5678",
-        "telNo": "0832221155",
-        "items": [
-          {
-            "name": "Chicken curry",
-            "price": 60,
-            "amount": "1"
-          },
-          {
-            "name": "Naan",
-            "price": "60",
-            "amount": "1"
-          }
-        ],
-        "totalPrice": "120",
-        "status": 2,
-        "__v": 0,
-        "totalItems": "2",
-        "note": "Make chicken curry less spicy",
-        "location": "LatLng(18.78828218510149, 98.9929770532485)"
-      },{
-        "id": 2,
-        "customer": "Jane Doe",
-        "time": Date.now(),
-        "address": "Robert Robertson, 1234 NW Bobcat Lane, St. Robert, MO 65584-5678",
-        "telNo": "0832221155",
-        "items": [
-          {
-            "name": "Chicken curry",
-            "price": 60,
-            "amount": "1"
-          },
-          {
-            "name": "Naan",
-            "price": "60",
-            "amount": "1"
-          }
-        ],
-        "totalPrice": "120",
-        "status": 1,
-        "__v": 0,
-        "totalItems": "2",
-        "note": "Make chicken curry less spicy",
-        "location": "LatLng(18.78828218510149, 98.9929770532485)"
-      }]);
-}
